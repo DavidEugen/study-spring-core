@@ -11,23 +11,18 @@ import org.junit.jupiter.api.Test;
 
 public class OrderServiceTest {
 
-//    MemberService memberService = new MemberServiceImpl(null);
-//    OrderService orderService = new OrderServiceImpl(null,null);
-
-    MemberService memberService ;
-    OrderService orderService ;
+    MemberService memberService;
+    OrderService orderService;
 
     @BeforeEach
-    public void beforeEach(){
+    public void beforeEach() {
         AppConfig appConfig = new AppConfig();
         memberService = appConfig.memberService();
         orderService = appConfig.orderService();
     }
 
-
-
     @Test
-    void createOrder(){
+    void createOrder() {
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
         memberService.join(member);
