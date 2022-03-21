@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class ApplicationContextExtendsFindTest {
 
     // 부모타입으로 조회 하면 자식 타입들 모두 조회된다.
-
+    // ApplicationContext는 스프링 최상위의 BeanFactory를 상속한다.
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(TestConfig.class);
 
     @Test
