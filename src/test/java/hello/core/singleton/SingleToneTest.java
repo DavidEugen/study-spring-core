@@ -5,6 +5,8 @@ import hello.core.member.MemberService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -12,7 +14,7 @@ public class SingleToneTest {
 
     @Test
     @DisplayName("스프링이 없는 순수한 DI 컨테이너 - 싱클톤이 아닌 경우")
-    void puerContainer() {
+    void pureContainer() {
         //싱글톤이 아닌 경우 메소드 팩토리 형식에 의해 성성된 new 는 서로 다른 객체를 생성한다.
         AppConfig appConfig = new AppConfig();
 
@@ -40,6 +42,25 @@ public class SingleToneTest {
         System.out.println("singletonService2 = " + singletonService2);
 
         assertThat(singletonService1).isSameAs(singletonService2);
+    }
+
+    @Test
+    @DisplayName("스프링 컨테이너 싱글톤")
+    void singletonContainer() {
+//        AppConfig appConfig = new AppConfig();
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        //호출시 마다 객체 생성 -1
+        MemberService memberService1 = ac.getBean("memberService", MemberService.class);
+        //호출시 마다 객체 생성 -2
+        MemberService memberService2 = ac.getBean("memberService", MemberService.class);
+
+        //참조값이 다른 것을 확인
+        System.out.println("memberService1 = " + memberService1);
+        System.out.println("memberService2 = " + memberService2);
+
+        //isSameAs -> ==
+        //isEqual -> Equals
+        assertThat(memberService1).isSameAs(memberService2);
     }
 
 }
