@@ -3,7 +3,7 @@ package hello.core.member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component("service") //기본은 memberServiceImpl
+@Component //기본은 memberServiceImpl
 public class MemberServiceImpl implements MemberService {
 
     private final MemberRepository memberRepository;
