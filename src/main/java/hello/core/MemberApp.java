@@ -7,12 +7,15 @@ import hello.core.member.MemberServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+
 public class MemberApp {
     public static void main(String[] args) {
+
         MemberService memberService;
 
 //        AppConfig appConfig = new AppConfig();
 //        memberService = appConfig.memberService();
+
 
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
         memberService = ac.getBean("memberService", MemberService.class);

@@ -6,6 +6,7 @@ public class Member {
     private String name;
     private Grade grade;
 
+    //@Autowired //의존관계 자동 주입은 스프링 컨테이너가 관리하는 스프링 빈이어야 동작한다. member는 빈으로 관리되고 있지 않으니까 @Autowired 자동 주입 안된다.
     public Member(Long id, String name, Grade grade) {
         this.id = id;
         this.name = name;
