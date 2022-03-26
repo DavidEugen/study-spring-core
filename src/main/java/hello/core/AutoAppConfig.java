@@ -16,9 +16,9 @@ import org.springframework.context.annotation.FilterType;
 //@Configuration component상속, 기존에 테스트 하던 수동 등록 빈들도 다 불러오기에 제외 시킨다.
 public class AutoAppConfig {
 
-    @Bean(name = "memoryMemberRepository")
-    public MemberRepository memberRepository() {
-        return new MemoryMemberRepository();
-    }
+//    @Bean(name = "memoryMemberRepository")
+//    public MemberRepository memberRepository() {
+//        return new MemoryMemberRepository();
+//    }
 
 }
