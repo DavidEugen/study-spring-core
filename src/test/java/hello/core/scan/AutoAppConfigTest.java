@@ -12,6 +12,7 @@ public class AutoAppConfigTest {
 
     @Test
     void basicScan() {
+        System.out.println("AutoConfigTest 실행");
         ApplicationContext ac = new
                 AnnotationConfigApplicationContext(AutoAppConfig.class);
         MemberService memberService = ac.getBean(MemberService.class);

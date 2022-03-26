@@ -32,6 +32,6 @@ public class ConfigurationSingletonTest {
         //AppConfig도 스프링 빈으로 등록된다.
         AppConfig bean = ac.getBean(AppConfig.class);
         System.out.println("bean = " + bean.getClass());
-        //출력: bean = class hello.core.AppConfig$$EnhancerBySpringCGLIB$$dfea0dbb
+        //출력: bean = class hello.core.AppConfig$$EnhancerBySpringCGLIB$$dfea0dbb2
     }
 }
