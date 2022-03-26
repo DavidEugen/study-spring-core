@@ -15,7 +15,6 @@ public class AutowiredTest {
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(TestBean.class);
     }
 
-
     static class TestBean {
         //호출 안됨
         @Autowired
