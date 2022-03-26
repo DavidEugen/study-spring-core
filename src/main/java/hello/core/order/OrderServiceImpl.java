@@ -6,20 +6,22 @@ import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component// 기본은 orderServiceImpl
+@Component // 기본은 orderServiceImpl
+@RequiredArgsConstructor // final 붙은 필드를 대상으로 생성자 만들어 준다. cmd + f12 로 보면 확인 가능하다.
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    @Autowired //생성자 주입 방식
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
+//    @Autowired //생성자 주입 방식
+//    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+//        this.memberRepository = memberRepository;
+//        this.discountPolicy = discountPolicy;
+//    }
     //생성자 주입은 bean이 생성되면서 생성자가 호출 되므로 autowired가 빠지더라도 의존성 주입까지 같이 일어난다.
 
 //    private MemberRepository memberRepository;
