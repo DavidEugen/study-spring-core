@@ -1,5 +1,6 @@
 package hello.core.autowired;
 
+import hello.core.AutoAppConfig;
 import hello.core.discount.DiscountPolicy;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
@@ -12,7 +13,7 @@ public class AllBeanTest {
 
     @Test
     void findAllBean() {
-        ApplicationContext ac = new AnnotationConfigApplicationContext(DiscountService.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(DiscountService.class, AutoAppConfig.class);
     }
 
     static class DiscountService {
