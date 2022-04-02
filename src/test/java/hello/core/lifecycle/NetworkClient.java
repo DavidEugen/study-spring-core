@@ -4,6 +4,7 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
 public class NetworkClient implements InitializingBean, DisposableBean {
+
     private String url;
 
     public NetworkClient() {
