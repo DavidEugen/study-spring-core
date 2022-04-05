@@ -13,7 +13,8 @@ import javax.annotation.PreDestroy;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SingletonWithPrototypeTest1 {
-//    @Test
+
+    //    @Test
 //    void prototypeFind() {
 //        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(PrototypeBean.class);
 //
