@@ -21,6 +21,7 @@ public class LogDemoController {
 	// public String logDemo(HttpServletRequest request) { // InterruptedException; must be caught or declared to be thrown
 	public String logDemo(HttpServletRequest request) throws InterruptedException {
 
+		//실제는 프록시 객체가 생성이 되어 있다.
 		System.out.println("myLogger in controller = " + myLogger.getClass());
 		String requestURL = request.getRequestURL().toString();
 
